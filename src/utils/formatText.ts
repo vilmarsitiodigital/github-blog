@@ -1,5 +1,5 @@
 export function formatText(text: string, limitLength = 50) {
-  if (text.trim().length <= 0) {
+  if (!text) {
     return text
   }
   const textArr = text.split(' ')
