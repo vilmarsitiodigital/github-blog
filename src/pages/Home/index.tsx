@@ -46,8 +46,6 @@ export function Home() {
             </small>
           </div>
           <input
-            // value={textSearch}
-            // onChange={(e) => setTextSearch(e.target.value)}
             type="text"
             onKeyDown={(e) =>
               e.key === 'Enter' && fetchPosts(e.currentTarget.value)
