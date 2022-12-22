@@ -22,7 +22,6 @@ export function Home() {
   const [postsCounter, setPostsCounter] = useState(0)
 
   const fetchPosts = useCallback(async (query: string | null) => {
-    // https://api.github.com/search/issues?q=is:issue%20is:open%20repo:vilmarsitiodigital/github-blog
     const response = await api.get(
       `search/issues?q=${query}is:issue%20is:open%20repo:vilmarsitiodigital/github-blog`,
     )
@@ -51,6 +50,7 @@ export function Home() {
             onKeyDown={(e) =>
               e.key === 'Enter' && fetchPosts(e.currentTarget.value)
             }
+            onBlur={(e) => fetchPosts(e.currentTarget.value)}
             placeholder="Busque o conteúdo e tecle [Enter]"
           />
         </SearchSection>
