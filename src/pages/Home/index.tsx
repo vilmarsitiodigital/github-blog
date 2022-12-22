@@ -22,8 +22,9 @@ export function Home() {
   const [postsCounter, setPostsCounter] = useState(0)
 
   const fetchPosts = useCallback(async (query: string | null) => {
+    // https://api.github.com/search/issues?q=is:issue%20is:open%20repo:vilmarsitiodigital/github-blog
     const response = await api.get(
-      `search/issues?q=${query}repo:vilmarsitiodigital/github-blog`,
+      `search/issues?q=${query}is:issue%20is:open%20repo:vilmarsitiodigital/github-blog`,
     )
 
     setPosts(response.data.items)
